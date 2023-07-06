@@ -1,7 +1,7 @@
-package com.example.spring_testing.person;
+package com.example.springtesting.person;
 
 
-import com.example.spring_testing.person.service.PersonService;
+import com.example.springtesting.person.service.PersonService;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package com.example.spring_testing.person;
+package com.example.springtesting.person;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

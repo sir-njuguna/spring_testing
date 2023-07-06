@@ -1,8 +1,8 @@
-package com.example.spring_testing.person.service;
+package com.example.springtesting.person.service;
 
-import com.example.spring_testing.person.form.CreatePerson;
-import com.example.spring_testing.person.model.Person;
-import com.example.spring_testing.person.repository.PersonRepository;
+import com.example.springtesting.person.form.CreatePerson;
+import com.example.springtesting.person.model.Person;
+import com.example.springtesting.person.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,11 +14,12 @@ public class PersonService {
         return "John";
     }
 
-    private void createPerson(CreatePerson form){
+    public Person registerPerson(CreatePerson form){
         Person person = new Person();
         person.setName(form.getName());
         person.setDateOfBirth(form.getDateOfBirth());
-        personRepository.save(person)
+
+        return personRepository.save(person);
     }
 
     @Autowired

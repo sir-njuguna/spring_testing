@@ -1,4 +1,4 @@
-package com.example.spring_testing.person.form;
+package com.example.springtesting.person.form;
 
 import lombok.Getter;
 import lombok.Setter;

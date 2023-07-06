@@ -1,10 +1,14 @@
-package com.example.spring_testing.person.controller;
+package com.example.springtesting.person.controller;
 
-import com.example.spring_testing.person.service.PersonService;
+import com.example.springtesting.person.form.CreatePerson;
+import com.example.springtesting.person.model.Person;
+import com.example.springtesting.person.service.PersonService;
+import com.example.springtesting.person.view.PersonView;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("person")
@@ -14,6 +18,12 @@ public class PersonController {
     @GetMapping("name")
     public String getName(){
         return personService.getName();
+    }
+
+    @PostMapping("register")
+    public ResponseEntity<PersonView> registerPerson(@RequestBody @Valid CreatePerson form){
+        Person person = personService.registerPerson(form);
+        return new ResponseEntity<>( new PersonView(person), HttpStatus.OK);
     }
 
     @Autowired
